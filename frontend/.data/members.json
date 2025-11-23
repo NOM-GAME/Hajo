@@ -1,0 +1,18 @@
+{
+  "pool_1761974128535_mxtt43eam": [
+    {
+      "id": "member_pool_1761974128535_mxtt43eam_0",
+      "member_address": "0xf850cdabf71bc3049d6efdec4f65df95fbed85dd",
+      "contribution_amount": 1,
+      "status": "pending",
+      "joined_at": "2025-11-01T05:15:29.200Z"
+    },
+    {
+      "id": "member_pool_1761974128535_mxtt43eam_1",
+      "member_address": "0xc07d1764871d592976b32405b55fd3d5e60222ab",
+      "contribution_amount": 1,
+      "status": "pending",
+      "joined_at": "2025-11-01T05:15:29.200Z"
+    }
+  ]
+}

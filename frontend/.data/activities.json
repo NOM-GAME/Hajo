@@ -1,0 +1,12 @@
+[
+  {
+    "id": "activity_1761974129200",
+    "pool_id": "pool_1761974128535_mxtt43eam",
+    "activity_type": "created",
+    "user_address": "0x167142915AD0fAADD84d9741eC253B82aB8625cd",
+    "amount": null,
+    "description": "Pool created with 2 members",
+    "created_at": "2025-11-01T05:15:29.200Z",
+    "tx_hash": "0x14782a6f9b8eead1837f5369d343318560109cc706b7525395ceaa751f648db5"
+  }
+]
