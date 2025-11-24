@@ -2,13 +2,12 @@
 
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { useAppKit } from "@reown/appkit/react"
-import { useAccount } from "wagmi"
+import { useAppKit, useAppKitAccount } from "@reown/appkit/react"
  
 
 export function Header() {
   const { open } = useAppKit()
-  const { address, isConnected } = useAccount()
+  const { address, isConnected } = useAppKitAccount()
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-border/40 bg-white/80 backdrop-blur-lg">
