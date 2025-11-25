@@ -3,9 +3,9 @@ import type { Metadata } from "next"
 import { GeistSans } from "geist/font/sans"
 import { GeistMono } from "geist/font/mono"
 import { Analytics } from "@vercel/analytics/next"
+import { Providers } from "@/components/providers"
+import { Toaster } from "@/components/ui/sonner"
 import "./globals.css"
-import { Web3Provider } from "@/components/web3-provider"
-import { Suspense } from "react"
 
 export const metadata: Metadata = {
   title: "Ajo - Community Savings on Base",
@@ -20,9 +20,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`}>
-        <Suspense fallback={null}>
-          <Web3Provider>{children}</Web3Provider>
-        </Suspense>
+        <Providers>
+          {children}
+          <Toaster />
+        </Providers>
         <Analytics />
       </body>
     </html>

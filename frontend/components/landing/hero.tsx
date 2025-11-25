@@ -2,15 +2,10 @@
 
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Smartphone, CreditCard, Send, Users } from "lucide-react"
-import { useAppKit } from "@reown/appkit/react"
-import { useAccount } from "wagmi"
 import Link from "next/link"
 import Image from "next/image"
 
 export function Hero() {
-  const { open } = useAppKit()
-  const { isConnected } = useAccount()
-
   return (
     <section className="relative pt-32 pb-20 sm:pt-40 sm:pb-32 overflow-hidden bg-gradient-to-br from-purple-50 via-white to-blue-50">
       {/* Large purple circle background */}

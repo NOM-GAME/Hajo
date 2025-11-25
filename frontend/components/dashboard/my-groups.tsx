@@ -7,7 +7,7 @@ import { Users, TrendingUp, Calendar, ArrowRight, Loader2, PlusCircle } from "lu
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
-import { useAccount } from "wagmi";
+import { useWallet } from "@/hooks/useWallet";
 
 interface Pool {
   id: string;
@@ -41,7 +41,7 @@ const item = {
 };
 
 export function MyGroups({ onCreateClick }: MyGroupsProps) {
-  const { address } = useAccount();
+  const { address } = useWallet();
   const [pools, setPools] = useState<Pool[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");

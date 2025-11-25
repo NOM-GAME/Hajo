@@ -2,12 +2,9 @@
 
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { useAppKit, useAppKitAccount } from "@reown/appkit/react"
  
 
 export function Header() {
-  const { open } = useAppKit()
-  const { address, isConnected } = useAppKitAccount()
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-border/40 bg-white/80 backdrop-blur-lg">
@@ -21,17 +18,9 @@ export function Header() {
           </Link>
 
           <div className="flex items-center gap-4">
-            {isConnected ? (
-              <Button size="lg" className="rounded-full px-6" asChild>
-                <Link href="/dashboard">
-                  {address ? `${address.slice(0, 6)}...${address.slice(-4)}` : "Dashboard"}
-                </Link>
-              </Button>
-            ) : (
-              <Button size="lg" className="rounded-full px-8" onClick={() => open()}>
-                Connect Wallet
-              </Button>
-            )}
+            <Button size="lg" className="rounded-full px-8" asChild>
+              <Link href="/dashboard">Launch App</Link>
+            </Button>
           </div>
         </div>
       </div>

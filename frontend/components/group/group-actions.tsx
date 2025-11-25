@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Loader2, ArrowUpRight, Check, AlertCircle } from "lucide-react"
-import { useAccount } from "wagmi"
 import {
   useApproveToken,
   useRotationalDeposit,
@@ -25,7 +24,7 @@ export function GroupActions({
   poolType,
   tokenAddress,
 }: GroupActionsProps) {
-  const { address } = useAccount()
+  const address = null // Wallet connection removed
   const [depositAmount, setDepositAmount] = useState("")
   const [isApproving, setIsApproving] = useState(false)
   const [approved, setApproved] = useState(false)

@@ -2,14 +2,11 @@
 
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import { useAppKit } from "@reown/appkit/react"
-import { useAccount } from "wagmi"
 import { Menu } from "lucide-react"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 
 export function DashboardHeader() {
-  const { open } = useAppKit()
-  const { address } = useAccount()
+  
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-border/40 bg-white/80 backdrop-blur-lg">
@@ -23,8 +20,8 @@ export function DashboardHeader() {
           </Link>
 
           <div className="flex items-center gap-4">
-            <Button onClick={() => open()} size="lg" className="hidden sm:flex rounded-full px-6">
-              {address?.slice(0, 6)}...{address?.slice(-4)}
+            <Button size="lg" className="hidden sm:flex rounded-full px-6" asChild>
+              <Link href="/">Home</Link>
             </Button>
 
             <DropdownMenu>
@@ -34,8 +31,8 @@ export function DashboardHeader() {
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
-                <DropdownMenuItem onClick={() => open()}>
-                  Wallet: {address?.slice(0, 6)}...{address?.slice(-4)}
+                <DropdownMenuItem asChild>
+                  <Link href="/">Home</Link>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>

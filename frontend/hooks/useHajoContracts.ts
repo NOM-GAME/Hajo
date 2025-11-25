@@ -1,5 +1,3 @@
-import { useWriteContract, useWaitForTransactionReceipt, usePublicClient } from 'wagmi'
-import { parseEther } from 'viem'
 import { useEffect, useState } from 'react'
 
 // Import ABIs as const
@@ -86,50 +84,23 @@ async function extractPoolAddress(publicClient: any, txHash: `0x${string}`): Pro
 
 // Approve token spending
 export function useApproveToken(spender: string, amount: string) {
-  const parsedAmount = amount ? parseEther(amount) : BigInt(0)
-
-  const { writeContract, data, isPending } = useWriteContract()
-  const { isLoading: isWaiting, isSuccess } = useWaitForTransactionReceipt({ 
-    hash: data 
-  })
-
-  const approve = () => {
-    writeContract({
-      address: TOKEN_ADDRESS,
-      abi: ERC20_ABI,
-      functionName: 'approve',
-      args: [spender as `0x${string}`, parsedAmount],
-    })
-  }
-
+  // Placeholder - wallet connection removed
   return {
-    approve,
-    isLoading: isPending || isWaiting,
-    isSuccess,
-    hash: data,
+    approve: () => console.log('Wallet connection removed'),
+    isLoading: false,
+    isSuccess: false,
+    hash: undefined,
   }
 }
 
 // ROTATIONAL POOL HOOKS
 export function useRotationalDeposit(poolAddress: string) {
-  const { writeContract, data, isPending } = useWriteContract()
-  const { isLoading: isWaiting, isSuccess } = useWaitForTransactionReceipt({ 
-    hash: data 
-  })
-
-  const deposit = () => {
-    writeContract({
-      address: poolAddress as `0x${string}`,
-      abi: ROTATIONAL_ABI,
-      functionName: 'contribute',
-    })
-  }
-
+  // Placeholder - wallet connection removed
   return {
-    deposit,
-    isLoading: isPending || isWaiting,
-    isSuccess,
-    hash: data,
+    deposit: () => console.log('Wallet connection removed'),
+    isLoading: false,
+    isSuccess: false,
+    hash: undefined,
   }
 }
 
@@ -141,52 +112,14 @@ export function useCreateRotational(
   treasuryFeeBps: number,
   relayerFeeBps: number
 ) {
-  const frequencyMap: Record<string, number> = {
-    daily: 86400,
-    weekly: 604800,
-    biweekly: 1209600,
-    monthly: 2592000,
-  }
-
-  const roundDuration = frequencyMap[frequency] || 604800
-  const parsedAmount = depositAmount ? parseEther(depositAmount) : BigInt(0)
-
-  const { writeContract, data, isPending } = useWriteContract()
-  const { isLoading: isWaiting, isSuccess } = useWaitForTransactionReceipt({ 
-    hash: data 
-  })
-  
-  const publicClient = usePublicClient()
+  // Placeholder - wallet connection removed
   const [poolAddress, setPoolAddress] = useState<string | null>(null)
 
-  useEffect(() => {
-    if (isSuccess && data && publicClient) {
-      extractPoolAddress(publicClient, data).then(addr => {
-        setPoolAddress(addr)
-      })
-    }
-  }, [isSuccess, data, publicClient])
-
-  const create = () => {
-    writeContract({
-      address: FACTORY_ADDRESS,
-      abi: FACTORY_ABI,
-      functionName: 'createPool',
-      args: [
-        members.map((m) => m as `0x${string}`),
-        parsedAmount,
-        BigInt(roundDuration),
-        BigInt(treasuryFeeBps),
-        BigInt(relayerFeeBps),
-      ],
-    })
-  }
-
   return {
-    create,
-    isLoading: isPending || isWaiting,
-    isSuccess,
-    hash: data,
+    create: () => console.log('Wallet connection removed'),
+    isLoading: false,
+    isSuccess: false,
+    hash: undefined,
     poolAddress,
   }
 }

@@ -10,14 +10,14 @@ import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Plus, X, Loader2, AlertCircle } from "lucide-react"
 import { useRouter } from "next/navigation"
-import { useAccount } from "wagmi"
 import { useCreateRotational } from "@/hooks/useHajoContracts"
 
 const TOKEN_ADDRESS = process.env.NEXT_PUBLIC_TOKEN_ADDRESS || "0x04F9CE8FDba78e489D2dF705c3498736EfBa6D28"
 
 export function RotationalForm() {
   const router = useRouter()
-  const { address } = useAccount()
+  const address = null // Wallet connection removed
+
   const [members, setMembers] = useState<string[]>([""])
   const [error, setError] = useState("")
   const [isSavingToDB, setIsSavingToDB] = useState(false)

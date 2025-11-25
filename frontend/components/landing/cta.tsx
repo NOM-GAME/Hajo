@@ -1,14 +1,9 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { useAppKit } from "@reown/appkit/react"
-import { useAccount } from "wagmi"
 import Link from "next/link"
 
 export function CTA() {
-  const { open } = useAppKit()
-  const { isConnected } = useAccount()
-
   return (
     <section className="py-20 sm:py-32 bg-gradient-to-br from-purple-50 via-white to-blue-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -19,11 +14,9 @@ export function CTA() {
           <p className="text-lg text-foreground/80 mb-8 text-pretty max-w-2xl mx-auto">
             Join thousands of savers who trust Hajo for transparent, secure, and community-driven savings circles
           </p>
-          {isConnected && (
-            <Button size="lg" className="bg-primary hover:bg-primary/90 text-lg px-8 h-14 rounded-full" asChild>
-              <Link href="/dashboard">Go to Dashboard</Link>
-            </Button>
-          )}
+          <Button size="lg" className="bg-primary hover:bg-primary/90 text-lg px-8 h-14 rounded-full" asChild>
+            <Link href="/dashboard">Go to Dashboard</Link>
+          </Button>
         </div>
       </div>
     </section>
