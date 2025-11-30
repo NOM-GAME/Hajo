@@ -15,5 +15,22 @@
     "next_payout": "2025-11-08T05:15:28.535Z",
     "created_at": "2025-11-01T05:15:29.200Z",
     "tx_hash": "0x14782a6f9b8eead1837f5369d343318560109cc706b7525395ceaa751f648db5"
+  },
+  {
+    "id": "pool_1764534185638_ur0y1g3v7",
+    "name": "school",
+    "description": "school fees",
+    "type": "rotational",
+    "status": "active",
+    "creator_address": "0x167142915ad0faadd84d9741ec253b82ab8625cd",
+    "contract_address": "0xd43f4cf4e51ceedc4a2211f39b6bdc5c8a7534f2",
+    "token_address": "0x9A2478962cC59f0A606D536937883cE5845eA400",
+    "members_count": 2,
+    "total_saved": 0,
+    "progress": 0,
+    "frequency": "weekly",
+    "next_payout": "2025-12-07T20:23:05.639Z",
+    "created_at": "2025-11-30T20:23:05.649Z",
+    "tx_hash": "0xe6aced1d16c43879d69d16733cb566d96eeb8e4f091f9bf634624f394c625256"
   }
 ]

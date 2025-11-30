@@ -55,7 +55,7 @@ const TOKEN_ADDRESS = (process.env.NEXT_PUBLIC_TOKEN_ADDRESS || '0x0') as `0x${s
 // Helper to extract pool address from transaction receipt
 async function extractPoolAddress(publicClient: any, txHash: `0x${string}`): Promise<string | null> {
   try {
-    const receipt = await publicClient.getTransactionReceipt({ hash: txHash })
+    const receipt = await publicClient.waitForTransactionReceipt({ hash: txHash })
     
     if (!receipt || !receipt.logs || receipt.logs.length === 0) return null
 
