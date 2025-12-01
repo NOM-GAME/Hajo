@@ -50,9 +50,6 @@ export function DashboardTabs() {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-              <Button size="lg" onClick={handleCreateClick} className="gap-2 rounded-full px-7 py-6 text-base font-semibold shadow-lg shadow-primary/30">
-                <PlusCircle className="h-5 w-5" /> Create New Pool
-              </Button>
               <Button size="lg" variant="outline" onClick={() => setActiveTab("groups")} className="gap-2 rounded-full px-7 py-6 text-base font-semibold bg-white/80 backdrop-blur-sm border border-[#e8e9f5]">
                 <Home className="h-5 w-5" /> My Pools
               </Button>
