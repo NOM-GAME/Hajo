@@ -1,5 +1,6 @@
 import { WagmiAdapter } from "@reown/appkit-adapter-wagmi";
 import { http } from "wagmi";
+import type { SocialProvider } from "@reown/appkit";
 
 // Hedera Testnet network config
 export const HEDERA_TESTNET = {
@@ -64,7 +65,7 @@ export const appKitMetadata = {
 
 export const appKitFeatures = {
   email: true,
-  socials: ["google", "x", "github", "discord", "apple", "facebook", "farcaster"],
+  socials: ["google", "x", "discord", "farcaster", "github", "apple", "facebook"] as unknown as SocialProvider[],
   emailShowWallets: true,
 };
 

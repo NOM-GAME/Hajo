@@ -48,12 +48,7 @@ export function DashboardTabs() {
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Join trusted savings circles powered by blockchain. Contribute together, earn together, and build your financial future with transparent, automated group savings.
             </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-              <Button size="lg" variant="outline" onClick={() => setActiveTab("groups")} className="gap-2 rounded-full px-7 py-6 text-base font-semibold bg-white/80 backdrop-blur-sm border border-[#e8e9f5]">
-                <Home className="h-5 w-5" /> My Pools
-              </Button>
-            </div>
+
           </motion.div>
           
           {/* Stats Cards */}
