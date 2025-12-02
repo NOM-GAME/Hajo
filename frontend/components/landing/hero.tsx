@@ -3,9 +3,22 @@
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Smartphone, CreditCard, Send, Users } from "lucide-react"
 import Link from "next/link"
+import { useRouter } from "next/navigation"
+import { useAppKitAccount } from "@reown/appkit/react"
+import { toast } from "sonner"
 import Image from "next/image"
 
 export function Hero() {
+  const router = useRouter()
+  const { isConnected } = useAppKitAccount()
+
+  const handleGoDashboard = () => {
+    if (!isConnected) {
+      toast.error("Please connect your wallet first")
+      return
+    }
+    router.push("/dashboard")
+  }
   return (
     <section className="relative pt-32 pb-20 sm:pt-40 sm:pb-32 overflow-hidden bg-gradient-to-br from-purple-50 via-white to-blue-50">
       {/* Large purple circle background */}
@@ -45,7 +58,7 @@ export function Hero() {
           </div>
 
           {/* Right side - Phone mockup */}
-          <div className="relative lg:h-[600px] flex items-center justify-center animate-in fade-in slide-in-from-right-4 duration-1000 delay-200">
+          <div className="relative lg:h-[600px] flex flex-col items-center justify-start animate-in fade-in slide-in-from-right-4 duration-1000 delay-200">
             {/* Phone frame */}
             <div className="relative w-[300px] h-[600px] bg-gradient-to-br from-gray-900 to-gray-800 rounded-[3rem] p-3 shadow-2xl">
               {/* Phone notch */}
@@ -113,6 +126,17 @@ export function Hero() {
             {/* Floating elements around phone */}
             <div className="absolute top-20 -left-10 w-16 h-16 bg-purple-200 rounded-2xl shadow-lg animate-float hidden lg:block"></div>
             <div className="absolute bottom-20 -right-10 w-20 h-20 bg-blue-200 rounded-full shadow-lg animate-float" style={{ animationDelay: "1s" }}></div>
+
+            {/* Go to Dashboard button under phone */}
+            <div className="mt-6">
+              <Button
+                size="lg"
+                className="bg-primary hover:bg-primary/90 text-lg px-8 h-12 rounded-full"
+                onClick={handleGoDashboard}
+              >
+                Go to Dashboard
+              </Button>
+            </div>
           </div>
         </div>
       </div>
