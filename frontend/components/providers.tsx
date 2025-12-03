@@ -9,6 +9,12 @@ import {
   wagmiAdapter,
   HEDERA_TESTNET,
   HEDERA_MAINNET,
+  BASE_MAINNET,
+  BASE_SEPOLIA,
+  CELO_MAINNET,
+  CELO_ALFAJORES,
+  SOMNIA_MAINNET,
+  SOMNIA_SHANNON,
   projectId,
   appKitMetadata,
   appKitFeatures,
@@ -23,16 +29,25 @@ export function Providers({ children }: { children: ReactNode }) {
     <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
       <WagmiProvider config={wagmiConfig}>
         <QueryClientProvider client={queryClient}>
-          <AppKitProvider
-            adapters={[wagmiAdapter]}
-            projectId={projectId}
-            networks={[HEDERA_TESTNET, HEDERA_MAINNET]}
-            metadata={appKitMetadata}
-            features={appKitFeatures}
-            allWallets="SHOW"
-            themeMode="dark"
-            themeVariables={appKitThemeVariables}
-          >
+        <AppKitProvider
+          adapters={[wagmiAdapter]}
+          projectId={projectId}
+          networks={[
+            HEDERA_TESTNET,
+            HEDERA_MAINNET,
+            BASE_MAINNET,
+            BASE_SEPOLIA,
+            CELO_MAINNET,
+            CELO_ALFAJORES,
+            SOMNIA_MAINNET,
+            SOMNIA_SHANNON,
+          ]}
+          metadata={appKitMetadata}
+          features={appKitFeatures}
+          allWallets="SHOW"
+          themeMode="dark"
+          themeVariables={appKitThemeVariables}
+        >
             {children}
           </AppKitProvider>
         </QueryClientProvider>
