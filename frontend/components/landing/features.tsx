@@ -8,12 +8,12 @@ const features = [
   {
     icon: Shield,
     title: "Blockchain Security",
-    description: "Your funds are protected by audited smart contracts on Base blockchain. Non-custodial and fully transparent.",
+    description: "Your funds are protected by audited smart contracts on Hedera. Non-custodial and fully transparent.",
   },
   {
     icon: CreditCard,
-    title: "Flexible Savings Groups",
-    description: "Create or join rotational, target-based, or flexible savings circles that match your financial goals.",
+    title: "Rotational Savings",
+    description: "Create or join a single rotational savings circle where members contribute and take turns receiving payouts.",
   },
   {
     icon: BarChart3,
