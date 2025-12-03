@@ -25,7 +25,7 @@ export function Transactions() {
         <p className="text-muted-foreground mt-1">View all deposits and payouts</p>
       </div>
 
-      <Card className="bg-white/80 backdrop-blur-sm border shadow-lg divide-y divide-border">
+      <Card className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border shadow-lg divide-y divide-border">
         {activities.length === 0 ? (
           <div className="p-10 text-center text-muted-foreground">
             No transactions yet

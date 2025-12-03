@@ -40,7 +40,7 @@ export default function GroupPage({ params }: { params: Promise<{ id: string }> 
   if (!pool) return <div>Pool not found</div>
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-blue-50">
+    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-950 dark:to-gray-900">
       <DashboardHeader />
       <main className="container mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-8">
         <Button variant="ghost" className="mb-6" asChild>

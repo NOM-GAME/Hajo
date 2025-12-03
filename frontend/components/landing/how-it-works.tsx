@@ -42,7 +42,7 @@ const item = {
 
 export function HowItWorks() {
   return (
-    <section id="how-it-works" className="py-20 sm:py-32 bg-gradient-to-br from-purple-50 via-white to-blue-50">
+    <section id="how-it-works" className="py-20 sm:py-32 bg-gradient-to-br from-purple-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-950 dark:to-gray-900">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -51,10 +51,10 @@ export function HowItWorks() {
           transition={{ duration: 0.5 }}
           className="max-w-2xl mx-auto text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-balance text-gray-900">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-balance text-foreground">
             How Hajo Works
           </h2>
-          <p className="text-lg text-gray-700 text-pretty">
+          <p className="text-lg text-muted-foreground text-pretty">
             Get started in minutes with our simple three-step process. No complicated setup, just pure savings power.
           </p>
         </motion.div>
@@ -73,8 +73,8 @@ export function HowItWorks() {
                 <div className="hidden md:block absolute top-16 left-[60%] w-[80%] h-0.5 border-t-2 border-dashed border-primary/30" />
               )}
               
-              <div className="flex flex-col items-center text-center relative z-10 p-6 rounded-xl transition-all duration-300 hover:bg-white/50">
-                <div className="w-24 h-24 rounded-full bg-white border-4 border-primary/20 flex items-center justify-center mb-6 relative transition-all duration-300 hover:border-primary/40 hover:scale-110">
+              <div className="flex flex-col items-center text-center relative z-10 p-6 rounded-xl transition-all duration-300 hover:bg-white/50 dark:hover:bg-gray-800/50">
+                <div className="w-24 h-24 rounded-full bg-white dark:bg-gray-800 border-4 border-primary/20 dark:border-primary/30 flex items-center justify-center mb-6 relative transition-all duration-300 hover:border-primary/40 dark:hover:border-primary/50 hover:scale-110">
                   <div className="w-16 h-16 rounded-full bg-primary flex items-center justify-center transition-all duration-300 hover:scale-110">
                     <step.icon className="w-8 h-8 text-white" />
                   </div>
@@ -82,8 +82,8 @@ export function HowItWorks() {
                     {step.number}
                   </div>
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-gray-900">{step.title}</h3>
-                <p className="text-gray-700 text-pretty leading-relaxed">{step.description}</p>
+                <h3 className="text-xl font-bold mb-3 text-foreground">{step.title}</h3>
+                <p className="text-muted-foreground text-pretty leading-relaxed">{step.description}</p>
               </div>
             </motion.div>
           ))}

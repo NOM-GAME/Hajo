@@ -116,7 +116,7 @@ export function MyGroups({ onCreateClick }: MyGroupsProps) {
             </p>
           </div>
         </div>
-        <Card className="p-6 border-red-200 bg-red-50 text-red-700">
+        <Card className="p-6 border-red-200 dark:border-red-900/50 bg-red-50 dark:bg-red-950/50 text-red-700 dark:text-red-400">
           <p>{error}</p>
         </Card>
       </div>
@@ -132,7 +132,7 @@ export function MyGroups({ onCreateClick }: MyGroupsProps) {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
         >
-          <Card className="p-16 text-center bg-white/80 backdrop-blur-sm border-2 border-dashed border-muted-foreground/20 shadow-lg">
+          <Card className="p-16 text-center bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border-2 border-dashed border-muted-foreground/20 shadow-lg">
             <div className="max-w-md mx-auto space-y-6">
               <div className="flex h-20 w-20 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 to-violet-100/50 mx-auto">
                 <Users className="h-10 w-10 text-primary" />
@@ -163,7 +163,7 @@ export function MyGroups({ onCreateClick }: MyGroupsProps) {
         >
           {pools.map((pool) => (
             <motion.div key={pool.id} variants={item}>
-              <Card className="group p-6 bg-white/80 backdrop-blur-sm border shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 h-full flex flex-col">
+              <Card className="group p-6 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 h-full flex flex-col">
                 <div className="flex items-start justify-between mb-6">
                   <div className="space-y-1">
                     <h3 className="text-xl font-bold group-hover:text-primary transition-colors">{pool.name}</h3>
@@ -171,7 +171,7 @@ export function MyGroups({ onCreateClick }: MyGroupsProps) {
                       <Badge variant="secondary" className="text-xs">
                         {formatPoolType(pool.type)}
                       </Badge>
-                      <Badge className="text-xs bg-green-100 text-green-700 hover:bg-green-200">
+                      <Badge className="text-xs bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 hover:bg-green-200 dark:hover:bg-green-900/50">
                         {pool.status}
                       </Badge>
                     </div>

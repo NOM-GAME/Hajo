@@ -30,7 +30,7 @@ const faqs = [
 
 export function FAQ() {
   return (
-    <section id="faq" className="py-20 sm:py-32 bg-white">
+    <section id="faq" className="py-20 sm:py-32 bg-white dark:bg-gray-950">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-start max-w-6xl mx-auto">
           {/* Left side - Card preview */}
@@ -41,7 +41,7 @@ export function FAQ() {
             transition={{ duration: 0.5 }}
             className="relative"
           >
-            <div className="bg-gradient-to-br from-purple-50 to-blue-50 rounded-3xl p-8 lg:p-12">
+            <div className="bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-950/30 dark:to-blue-950/30 rounded-3xl p-8 lg:p-12">
               <div className="bg-gradient-to-br from-purple-600 to-blue-500 rounded-2xl p-6 text-white shadow-2xl max-w-sm">
                 <div className="flex items-center justify-between mb-8">
                   <span className="text-sm font-medium">Group Savings</span>
@@ -77,7 +77,7 @@ export function FAQ() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-balance">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-balance text-foreground">
               Frequently Asked Questions
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
@@ -86,7 +86,7 @@ export function FAQ() {
 
             <Accordion type="single" collapsible className="w-full space-y-4">
               {faqs.map((faq, index) => (
-                <AccordionItem key={index} value={`item-${index}`} className="border rounded-xl px-6 bg-purple-50/30">
+                <AccordionItem key={index} value={`item-${index}`} className="border rounded-xl px-6 bg-purple-50/30 dark:bg-purple-950/30">
                   <AccordionTrigger className="text-left font-semibold hover:no-underline py-4">
                     {index + 1}. {faq.question}
                   </AccordionTrigger>

@@ -5,7 +5,7 @@ import { Smartphone, Monitor, CheckCircle } from "lucide-react"
 
 export function DashboardView() {
   return (
-    <section id="dashboard" className="py-20 sm:py-32 bg-gradient-to-br from-purple-50 via-white to-blue-50">
+    <section id="dashboard" className="py-20 sm:py-32 bg-gradient-to-br from-purple-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-950 dark:to-gray-900">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
           {/* Left side - Content */}
@@ -15,7 +15,7 @@ export function DashboardView() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 text-balance">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 text-balance text-foreground">
               Manage Everything from Your Dashboard
             </h2>
             

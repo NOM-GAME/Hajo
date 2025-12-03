@@ -28,7 +28,7 @@ const benefits = [
 
 export function MoneySaving() {
   return (
-    <section className="py-20 sm:py-32 bg-white">
+    <section className="py-20 sm:py-32 bg-white dark:bg-gray-950">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
           {/* Left side - Phone mockup */}
@@ -67,21 +67,21 @@ export function MoneySaving() {
                   </div>
 
                   {/* Transaction list */}
-                  <div className="bg-white rounded-t-3xl p-5 absolute bottom-0 left-0 right-0 h-[60%]">
-                    <h3 className="font-semibold mb-4 text-gray-900">Recent Activity</h3>
+                  <div className="bg-white dark:bg-gray-800 rounded-t-3xl p-5 absolute bottom-0 left-0 right-0 h-[60%]">
+                    <h3 className="font-semibold mb-4 text-gray-900 dark:text-gray-100">Recent Activity</h3>
                     <div className="space-y-3">
                       {[1, 2, 3, 4].map((i) => (
                         <div key={i} className="flex items-center justify-between">
                           <div className="flex items-center gap-3">
-                            <div className="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center">
-                              <Wallet className="w-5 h-5 text-purple-600" />
+                            <div className="w-10 h-10 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center">
+                              <Wallet className="w-5 h-5 text-purple-600 dark:text-purple-400" />
                             </div>
                             <div>
-                              <p className="text-sm font-medium text-gray-900">Payment</p>
-                              <p className="text-xs text-gray-500">Today</p>
+                              <p className="text-sm font-medium text-gray-900 dark:text-gray-100">Payment</p>
+                              <p className="text-xs text-gray-500 dark:text-gray-400">Today</p>
                             </div>
                           </div>
-                          <p className="text-sm font-semibold text-gray-900">-$45</p>
+                          <p className="text-sm font-semibold text-gray-900 dark:text-gray-100">-$45</p>
                         </div>
                       ))}
                     </div>
@@ -90,12 +90,12 @@ export function MoneySaving() {
               </div>
 
               {/* Floating stats */}
-              <div className="absolute -top-8 -right-4 bg-white rounded-2xl shadow-xl p-4 animate-float hidden lg:block">
+              <div className="absolute -top-8 -right-4 bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-4 animate-float hidden lg:block">
                 <div className="flex items-center gap-2 text-sm">
-                  <TrendingUp className="w-5 h-5 text-purple-600" />
+                  <TrendingUp className="w-5 h-5 text-purple-600 dark:text-purple-400" />
                   <div>
-                    <p className="text-xs text-gray-500">This Month</p>
-                    <p className="font-bold text-gray-900">+$2,340</p>
+                    <p className="text-xs text-gray-500 dark:text-gray-400">This Month</p>
+                    <p className="font-bold text-gray-900 dark:text-gray-100">+$2,340</p>
                   </div>
                 </div>
               </div>
@@ -110,7 +110,7 @@ export function MoneySaving() {
             transition={{ duration: 0.5 }}
             className="order-1 lg:order-2"
           >
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-balance">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-balance text-foreground">
               Community Savings Platform Built for Trust
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
@@ -120,11 +120,11 @@ export function MoneySaving() {
             <div className="grid grid-cols-2 gap-6">
               {benefits.map((benefit, index) => (
                 <div key={index} className="flex items-start gap-3">
-                  <div className="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center flex-shrink-0">
-                    <benefit.icon className="w-5 h-5 text-purple-600" />
+                  <div className="w-10 h-10 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center flex-shrink-0">
+                    <benefit.icon className="w-5 h-5 text-purple-600 dark:text-purple-400" />
                   </div>
                   <div>
-                    <h3 className="font-semibold mb-1">{benefit.title}</h3>
+                    <h3 className="font-semibold mb-1 text-foreground">{benefit.title}</h3>
                     <p className="text-sm text-muted-foreground">{benefit.description}</p>
                   </div>
                 </div>

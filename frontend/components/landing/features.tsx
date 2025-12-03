@@ -39,7 +39,7 @@ const item = {
 
 export function Features() {
   return (
-    <section id="features" className="py-20 sm:py-32 bg-white">
+    <section id="features" className="py-20 sm:py-32 bg-white dark:bg-gray-950">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           variants={container}
@@ -57,8 +57,8 @@ export function Features() {
               <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-purple-100 mb-6 transition-all duration-300 hover:bg-purple-200 hover:scale-110">
                 <feature.icon className="h-7 w-7 text-primary" />
               </div>
-              <h3 className="text-xl font-bold mb-3 text-gray-900">{feature.title}</h3>
-              <p className="text-gray-700 text-pretty leading-relaxed">{feature.description}</p>
+              <h3 className="text-xl font-bold mb-3 text-foreground">{feature.title}</h3>
+              <p className="text-muted-foreground text-pretty leading-relaxed">{feature.description}</p>
             </motion.div>
           ))}
         </motion.div>

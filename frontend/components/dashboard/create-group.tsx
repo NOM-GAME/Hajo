@@ -11,7 +11,7 @@ export function CreateGroup() {
         <p className="text-muted-foreground mt-1">Traditional ajo/esusu system where members take turns receiving payouts</p>
       </div>
 
-      <Card className="p-6 bg-white/80 backdrop-blur-sm border shadow-lg">
+      <Card className="p-6 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border shadow-lg">
         <RotationalForm />
       </Card>
     </div>

@@ -9,7 +9,7 @@ export function WalletButton() {
   if (isConnected && address) {
     return (
       <div className="flex items-center gap-3">
-        <div className="px-3 py-1.5 rounded-lg bg-primary/10 border border-primary/20">
+        <div className="px-3 py-1.5 rounded-lg bg-primary/10 dark:bg-primary/20 border border-primary/20 dark:border-primary/30">
           <span className="text-sm font-medium text-primary">
             {address.slice(0, 6)}...{address.slice(-4)}
           </span>

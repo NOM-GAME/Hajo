@@ -14,26 +14,29 @@ import {
   appKitFeatures,
   appKitThemeVariables,
 } from "@/lib/reown";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const queryClient = new QueryClient();
 
 export function Providers({ children }: { children: ReactNode }) {
   return (
-    <WagmiProvider config={wagmiConfig}>
-      <QueryClientProvider client={queryClient}>
-        <AppKitProvider
-          adapters={[wagmiAdapter]}
-          projectId={projectId}
-          networks={[HEDERA_TESTNET, HEDERA_MAINNET]}
-          metadata={appKitMetadata}
-          features={appKitFeatures}
-          allWallets="SHOW"
-          themeMode="dark"
-          themeVariables={appKitThemeVariables}
-        >
-          {children}
-        </AppKitProvider>
-      </QueryClientProvider>
-    </WagmiProvider>
+    <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+      <WagmiProvider config={wagmiConfig}>
+        <QueryClientProvider client={queryClient}>
+          <AppKitProvider
+            adapters={[wagmiAdapter]}
+            projectId={projectId}
+            networks={[HEDERA_TESTNET, HEDERA_MAINNET]}
+            metadata={appKitMetadata}
+            features={appKitFeatures}
+            allWallets="SHOW"
+            themeMode="dark"
+            themeVariables={appKitThemeVariables}
+          >
+            {children}
+          </AppKitProvider>
+        </QueryClientProvider>
+      </WagmiProvider>
+    </ThemeProvider>
   );
 }

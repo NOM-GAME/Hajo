@@ -5,7 +5,7 @@ import { Smartphone, Monitor } from "lucide-react"
 
 export function Security() {
   return (
-    <section id="security" className="py-20 sm:py-32 bg-white">
+    <section id="security" className="py-20 sm:py-32 bg-white dark:bg-gray-950">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto">
           <motion.div
@@ -15,7 +15,7 @@ export function Security() {
             transition={{ duration: 0.5 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-balance">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-balance text-foreground">
               Save Anywhere, Anytime
             </h2>
             <p className="text-lg text-muted-foreground text-pretty max-w-2xl mx-auto">
@@ -31,7 +31,7 @@ export function Security() {
             className="relative"
           >
             {/* Main container with devices */}
-            <div className="bg-gradient-to-br from-purple-100 via-blue-50 to-purple-50 rounded-3xl p-8 lg:p-12">
+            <div className="bg-gradient-to-br from-purple-100 via-blue-50 to-purple-50 dark:from-purple-950/30 dark:via-blue-950/20 dark:to-purple-950/30 rounded-3xl p-8 lg:p-12">
               <div className="grid lg:grid-cols-2 gap-8 items-center">
                 {/* Left - Laptop mockup */}
                 <div className="relative">

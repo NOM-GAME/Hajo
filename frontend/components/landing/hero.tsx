@@ -20,22 +20,22 @@ export function Hero() {
     router.push("/dashboard")
   }
   return (
-    <section className="relative pt-32 pb-20 sm:pt-40 sm:pb-32 overflow-hidden bg-gradient-to-br from-purple-50 via-white to-blue-50">
+    <section className="relative pt-32 pb-20 sm:pt-40 sm:pb-32 overflow-hidden bg-gradient-to-br from-purple-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-950 dark:to-gray-900">
       {/* Large purple circle background */}
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-purple-200/20 rounded-full blur-3xl -translate-y-1/4 translate-x-1/4" />
-      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-200/15 rounded-full blur-3xl translate-y-1/4 -translate-x-1/4" />
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-purple-200/20 dark:bg-purple-900/20 rounded-full blur-3xl -translate-y-1/4 translate-x-1/4" />
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-200/15 dark:bg-blue-900/15 rounded-full blur-3xl translate-y-1/4 -translate-x-1/4" />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left side - Text content */}
           <div className="max-w-2xl">
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-6 text-gray-900 animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-100">
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-6 text-foreground animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-100">
               Community Savings <br />
               Made Simple <br />
               with <span className="text-primary">Hajo</span>
             </h1>
 
-            <p className="text-lg text-gray-700 mb-8 max-w-xl animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-200">
+            <p className="text-lg text-muted-foreground mb-8 max-w-xl animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-200">
               Join trusted savings circles powered by blockchain. Contribute together, earn together, and build your financial future with transparent, automated group savings.
             </p>
 
@@ -47,11 +47,11 @@ export function Hero() {
               </Button>
             </div>
 
-            <div className="flex items-center gap-2 text-sm text-gray-700 animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-400">
+            <div className="flex items-center gap-2 text-sm text-muted-foreground animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-400">
               <div className="flex -space-x-2">
-                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-purple-400 to-blue-400 border-2 border-white"></div>
-                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-pink-400 to-fuchsia-400 border-2 border-white"></div>
-                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-violet-400 to-indigo-400 border-2 border-white"></div>
+                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-purple-400 to-blue-400 border-2 border-white dark:border-gray-800"></div>
+                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-pink-400 to-fuchsia-400 border-2 border-white dark:border-gray-800"></div>
+                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-violet-400 to-indigo-400 border-2 border-white dark:border-gray-800"></div>
               </div>
               <span>Join 1,000+ active savers building wealth together</span>
             </div>
@@ -101,21 +101,21 @@ export function Hero() {
                 </div>
 
                 {/* Recent payments */}
-                <div className="bg-white rounded-t-3xl p-6 h-full">
-                  <h3 className="font-semibold mb-4 text-gray-900">Recent Payments</h3>
+                <div className="bg-white dark:bg-gray-800 rounded-t-3xl p-6 h-full">
+                  <h3 className="font-semibold mb-4 text-gray-900 dark:text-gray-100">Recent Payments</h3>
                   <div className="space-y-3">
                     {[1, 2, 3].map((i) => (
                       <div key={i} className="flex items-center justify-between">
                         <div className="flex items-center gap-3">
-                          <div className="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center">
-                            <Users className="w-5 h-5 text-purple-600" />
+                          <div className="w-10 h-10 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center">
+                            <Users className="w-5 h-5 text-purple-600 dark:text-purple-400" />
                           </div>
                           <div>
-                            <p className="text-sm font-medium text-gray-900">Transaction</p>
-                            <p className="text-xs text-gray-500">Today • 12:30 PM</p>
+                            <p className="text-sm font-medium text-gray-900 dark:text-gray-100">Transaction</p>
+                            <p className="text-xs text-gray-500 dark:text-gray-400">Today • 12:30 PM</p>
                           </div>
                         </div>
-                        <p className="text-sm font-semibold text-gray-900">-$56.00</p>
+                        <p className="text-sm font-semibold text-gray-900 dark:text-gray-100">-$56.00</p>
                       </div>
                     ))}
                   </div>
@@ -124,8 +124,8 @@ export function Hero() {
             </div>
 
             {/* Floating elements around phone */}
-            <div className="absolute top-20 -left-10 w-16 h-16 bg-purple-200 rounded-2xl shadow-lg animate-float hidden lg:block"></div>
-            <div className="absolute bottom-20 -right-10 w-20 h-20 bg-blue-200 rounded-full shadow-lg animate-float" style={{ animationDelay: "1s" }}></div>
+            <div className="absolute top-20 -left-10 w-16 h-16 bg-purple-200 dark:bg-purple-900/30 rounded-2xl shadow-lg animate-float hidden lg:block"></div>
+            <div className="absolute bottom-20 -right-10 w-20 h-20 bg-blue-200 dark:bg-blue-900/30 rounded-full shadow-lg animate-float" style={{ animationDelay: "1s" }}></div>
 
             {/* Go to Dashboard button under phone */}
             <div className="mt-6">
