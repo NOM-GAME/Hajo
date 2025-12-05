@@ -16,7 +16,7 @@ const faqs = [
   },
   {
     question: "Is my money safe with Hajo?",
-    answer: "Absolutely! Your funds are protected by audited smart contracts on the Base blockchain. We're non-custodial, meaning you maintain full control. All transactions are transparent and recorded on-chain."
+    answer: "Absolutely! Your funds are protected by audited smart contracts on multiple blockchains (Hedera, Base, Celo, and Somnia). We're non-custodial, meaning you maintain full control. All transactions are transparent and recorded on-chain."
   },
   {
     question: "How do I join or create a savings group?",

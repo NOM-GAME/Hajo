@@ -8,7 +8,7 @@ const features = [
   {
     icon: Shield,
     title: "Blockchain Security",
-    description: "Your funds are protected by audited smart contracts on Base blockchain. Non-custodial and fully transparent.",
+    description: "Your funds are protected by audited smart contracts on multiple blockchains. Non-custodial and fully transparent.",
   },
   {
     icon: CreditCard,
