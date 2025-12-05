@@ -19,33 +19,68 @@ export function DashboardTabs() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-gray-100 to-gray-200 dark:from-gray-900 dark:via-gray-950 dark:to-gray-900">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-gray-100 to-gray-200 dark:from-gray-900 dark:via-gray-950 dark:to-gray-900 transition-colors duration-300">
       {/* Hero Section */}
       <section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-100/80 via-transparent to-gray-200/80 dark:from-purple-950/20 dark:via-transparent dark:to-blue-950/20" />
-        <div className="absolute -top-10 -right-10 w-[28rem] h-[28rem] bg-primary/20 rounded-full blur-3xl dark:bg-primary/20" />
-        <div className="absolute bottom-[-4rem] left-[-4rem] w-[22rem] h-[22rem] bg-gray-300/40 rounded-full blur-3xl dark:bg-blue-500/20" />
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-100/80 via-transparent to-gray-200/80 dark:from-purple-950/30 dark:via-gray-950/80 dark:to-blue-950/30 transition-colors duration-700" />
+        <motion.div 
+          className="absolute -top-10 -right-10 w-[28rem] h-[28rem] bg-primary/20 rounded-full blur-3xl dark:bg-primary/30"
+          animate={{
+            scale: [1, 1.05, 1],
+            x: [0, 10, 0],
+            y: [0, -10, 0],
+          }}
+          transition={{
+            duration: 15,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+        <motion.div 
+          className="absolute bottom-[-4rem] left-[-4rem] w-[22rem] h-[22rem] bg-gray-300/40 rounded-full blur-3xl dark:bg-blue-500/30"
+          animate={{
+            scale: [1, 1.05, 1],
+            x: [0, -10, 0],
+            y: [0, 10, 0],
+          }}
+          transition={{
+            duration: 15,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 2
+          }}
+        />
         
         <div className="relative z-10 px-4 py-12 sm:py-16">
-          <motion.div
+          <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             className="max-w-4xl mx-auto text-center space-y-6"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/90 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200 dark:border-gray-700 shadow-sm">
-              <Sparkles className="h-4 w-4 text-primary" />
-              <span className="text-sm font-medium text-foreground">Powered by Hedera</span>
-            </div>
+            <motion.div 
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2, type: 'spring', stiffness: 300, damping: 10 }}
+              className="group inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-white/95 dark:bg-gray-800/95 backdrop-blur-sm border border-gray-200/80 dark:border-gray-700/60 shadow-sm hover:shadow transition-all duration-300 hover:border-primary/30 dark:hover:border-primary/50"
+            >
+              <div className="relative">
+                <div className="absolute inset-0 rounded-full bg-primary/10 animate-pulse group-hover:animate-none" />
+                <Sparkles className="relative h-4 w-4 text-primary" />
+              </div>
+              <span className="text-sm font-medium bg-gradient-to-r from-gray-700 to-gray-900 dark:from-gray-200 dark:to-white bg-clip-text text-transparent">
+                Powered by Hedera
+              </span>
+            </motion.div>
             
-            <h1 className="text-5xl sm:text-6xl lg:text-[64px] font-extrabold leading-[1.1] tracking-tight text-foreground">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight tracking-tight text-gray-900 dark:text-white">
               Community Savings <br />
               <span className="bg-gradient-to-r from-[#7A5AF8] to-[#5B8DEF] bg-clip-text text-transparent">
                 Made Simple
               </span>
             </h1>
             
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed">
               Join trusted savings circles powered by blockchain. Contribute together, earn together, and build your financial future with transparent, automated group savings.
             </p>
 
@@ -58,37 +93,55 @@ export function DashboardTabs() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-5xl mx-auto mt-12"
           >
-            <Card className="p-6 bg-white/95 dark:bg-gray-800/90 backdrop-blur-sm border border-gray-100 dark:border-gray-700/50 shadow-lg shadow-gray-200/50 dark:shadow-primary/10 transition-all duration-300 hover:shadow-xl hover:shadow-gray-300/50 dark:hover:shadow-primary/20 hover:scale-105">
+            <Card className="p-6 bg-white/95 dark:bg-gray-800/95 backdrop-blur-sm border border-gray-100/80 dark:border-gray-700/70 shadow-lg shadow-gray-200/50 dark:shadow-primary/10 transition-all duration-300 hover:shadow-xl hover:shadow-gray-300/50 dark:hover:shadow-primary/20 hover:scale-[1.02] dark:hover:border-gray-600/70">
               <div className="flex items-center justify-between mb-2">
-                <div className="p-2.5 rounded-xl bg-gradient-to-br from-gray-50 to-white border border-gray-100 dark:from-primary/20 dark:to-gray-700 shadow-sm transition-all duration-300 hover:scale-110">
-                  <Users className="h-5 w-5 text-primary" />
+                <div className="p-2.5 rounded-xl bg-gradient-to-br from-gray-50 to-white border border-gray-100/80 dark:from-primary/20 dark:to-gray-700 shadow-sm transition-all duration-300 hover:scale-110 group-hover:shadow-md">
+                  <Users className="h-5 w-5 text-primary group-hover:scale-110 transition-transform" />
                 </div>
-                <ArrowUpRight className="h-4 w-4 text-green-600 dark:text-green-400" />
+                <motion.div 
+                  className="p-1 rounded-full bg-green-50 dark:bg-green-900/30 text-green-600 dark:text-green-400"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <ArrowUpRight className="h-3.5 w-3.5" />
+                </motion.div>
               </div>
-              <div className="text-2xl font-bold text-foreground">0</div>
-              <div className="text-sm text-muted-foreground">Active Pools</div>
+              <div className="text-3xl font-bold text-gray-900 dark:text-white">0</div>
+              <div className="text-sm font-medium text-gray-500 dark:text-gray-400">Active Pools</div>
             </Card>
             
-            <Card className="p-6 bg-white/95 dark:bg-gray-800/90 backdrop-blur-sm border border-gray-100 dark:border-gray-700/50 shadow-lg shadow-gray-200/50 dark:shadow-primary/10 transition-all duration-300 hover:shadow-xl hover:shadow-gray-300/50 dark:hover:shadow-primary/20 hover:scale-105">
+            <Card className="p-6 bg-white/95 dark:bg-gray-800/95 backdrop-blur-sm border border-gray-100/80 dark:border-gray-700/70 shadow-lg shadow-gray-200/50 dark:shadow-primary/10 transition-all duration-300 hover:shadow-xl hover:shadow-gray-300/50 dark:hover:shadow-primary/20 hover:scale-[1.02] dark:hover:border-gray-600/70">
               <div className="flex items-center justify-between mb-2">
-                <div className="p-2.5 rounded-xl bg-gradient-to-br from-gray-50 to-white border border-gray-100 dark:from-blue-500/20 dark:to-gray-700 shadow-sm transition-all duration-300 hover:scale-110">
-                  <DollarSign className="h-5 w-5 text-[#5B8DEF]" />
+                <div className="p-2.5 rounded-xl bg-gradient-to-br from-gray-50 to-white border border-gray-100/80 dark:from-blue-500/20 dark:to-gray-700 shadow-sm transition-all duration-300 hover:scale-110 group-hover:shadow-md">
+                  <DollarSign className="h-5 w-5 text-[#5B8DEF] group-hover:scale-110 transition-transform" />
                 </div>
-                <ArrowUpRight className="h-4 w-4 text-green-600 dark:text-green-400" />
+                <motion.div 
+                  className="p-1 rounded-full bg-green-50 dark:bg-green-900/30 text-green-600 dark:text-green-400"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <ArrowUpRight className="h-3.5 w-3.5" />
+                </motion.div>
               </div>
-              <div className="text-2xl font-bold text-foreground">$0</div>
-              <div className="text-sm text-muted-foreground">Total Saved</div>
+              <div className="text-3xl font-bold text-gray-900 dark:text-white">$0</div>
+              <div className="text-sm font-medium text-gray-500 dark:text-gray-400">Total Saved</div>
             </Card>
             
-            <Card className="p-6 bg-white/95 dark:bg-gray-800/90 backdrop-blur-sm border border-gray-100 dark:border-gray-700/50 shadow-lg shadow-gray-200/50 dark:shadow-primary/10 transition-all duration-300 hover:shadow-xl hover:shadow-gray-300/50 dark:hover:shadow-primary/20 hover:scale-105">
+            <Card className="p-6 bg-white/95 dark:bg-gray-800/95 backdrop-blur-sm border border-gray-100/80 dark:border-gray-700/70 shadow-lg shadow-gray-200/50 dark:shadow-primary/10 transition-all duration-300 hover:shadow-xl hover:shadow-gray-300/50 dark:hover:shadow-primary/20 hover:scale-[1.02] dark:hover:border-gray-600/70">
               <div className="flex items-center justify-between mb-2">
-                <div className="p-2.5 rounded-xl bg-gradient-to-br from-gray-50 to-white border border-gray-100 dark:from-primary/20 dark:to-gray-700 shadow-sm transition-all duration-300 hover:scale-110">
-                  <TrendingUp className="h-5 w-5 text-primary" />
+                <div className="p-2.5 rounded-xl bg-gradient-to-br from-gray-50 to-white border border-gray-100/80 dark:from-primary/20 dark:to-gray-700 shadow-sm transition-all duration-300 hover:scale-110 group-hover:shadow-md">
+                  <TrendingUp className="h-5 w-5 text-primary group-hover:scale-110 transition-transform" />
                 </div>
-                <ArrowUpRight className="h-4 w-4 text-green-600 dark:text-green-400" />
+                <motion.div 
+                  className="p-1 rounded-full bg-green-50 dark:bg-green-900/30 text-green-600 dark:text-green-400"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <ArrowUpRight className="h-3.5 w-3.5" />
+                </motion.div>
               </div>
-              <div className="text-2xl font-bold text-foreground">0%</div>
-              <div className="text-sm text-muted-foreground">Completion Rate</div>
+              <div className="text-3xl font-bold text-gray-900 dark:text-white">0%</div>
+              <div className="text-sm font-medium text-gray-500 dark:text-gray-400">Completion Rate</div>
             </Card>
           </motion.div>
         </div>
@@ -96,23 +149,41 @@ export function DashboardTabs() {
 
       {/* Main Content */}
       <div className="container mx-auto px-4 py-8 max-w-6xl">
-        <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-          <TabsList className="w-full justify-center gap-3 p-2 bg-white/95 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200 dark:border-gray-700 shadow-sm rounded-full">
-            <TabsTrigger value="groups" className="gap-2 rounded-full px-5 py-2.5 md:px-6 md:py-3 text-sm md:text-base font-semibold data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow transition-all duration-200 hover:bg-gray-100 dark:hover:bg-accent/50">
-              <Home className="h-4 w-4" />
-              <span>Pools</span>
+        <Tabs 
+          value={activeTab} 
+          onValueChange={setActiveTab} 
+          className="w-full"
+        >
+          <TabsList className="w-full justify-center gap-3 p-1.5 bg-white/95 dark:bg-gray-800/95 backdrop-blur-sm border border-gray-200/80 dark:border-gray-700/70 shadow-sm rounded-full transition-all duration-300 hover:shadow-md dark:hover:shadow-gray-800/50">
+            <TabsTrigger 
+              value="groups" 
+              className="group gap-2 rounded-full px-5 py-2.5 md:px-6 md:py-2.5 text-sm md:text-base font-medium data-[state=active]:bg-primary/90 data-[state=active]:text-primary-foreground data-[state=active]:shadow-sm transition-all duration-200 hover:bg-gray-50/80 dark:hover:bg-gray-700/60 hover:shadow-sm active:scale-95"
+            >
+              <Home className="h-4 w-4 transition-transform group-hover:scale-110 group-data-[state=active]:scale-110" />
+              <span className="relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 group-hover:after:w-full group-data-[state=active]:after:w-full">Pools</span>
             </TabsTrigger>
-            <TabsTrigger value="create" className="gap-2 rounded-full px-5 py-2.5 md:px-6 md:py-3 text-sm md:text-base font-semibold data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow transition-all duration-200 hover:bg-gray-100 dark:hover:bg-accent/50">
-              <PlusCircle className="h-4 w-4" />
-              <span>Create</span>
+            <TabsTrigger 
+              value="create" 
+              className="group gap-2 rounded-full px-5 py-2.5 md:px-6 md:py-2.5 text-sm md:text-base font-medium data-[state=active]:bg-primary/90 data-[state=active]:text-primary-foreground data-[state=active]:shadow-sm transition-all duration-200 hover:bg-gray-50/80 dark:hover:bg-gray-700/60 hover:shadow-sm active:scale-95"
+            >
+              <PlusCircle className="h-4 w-4 transition-transform group-hover:scale-110 group-data-[state=active]:scale-110" />
+              <span className="relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 group-hover:after:w-full group-data-[state=active]:after:w-full">Create</span>
             </TabsTrigger>
-            <TabsTrigger value="transactions" className="gap-2 rounded-full px-5 py-2.5 md:px-6 md:py-3 text-sm md:text-base font-semibold data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow transition-all duration-200 hover:bg-gray-100 dark:hover:bg-accent/50">
-              <Receipt className="h-4 w-4" />
-              <span>Activity</span>
+            <TabsTrigger 
+              value="transactions" 
+              className="group gap-2 rounded-full px-5 py-2.5 md:px-6 md:py-2.5 text-sm md:text-base font-medium data-[state=active]:bg-primary/90 data-[state=active]:text-primary-foreground data-[state=active]:shadow-sm transition-all duration-200 hover:bg-gray-50/80 dark:hover:bg-gray-700/60 hover:shadow-sm active:scale-95"
+            >
+              <Receipt className="h-4 w-4 transition-transform group-hover:scale-110 group-data-[state=active]:scale-110" />
+              <span className="relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 group-hover:after:w-full group-data-[state=active]:after:w-full">Activity</span>
             </TabsTrigger>
           </TabsList>
 
-          <div className="mt-6 min-h-[600px]">
+          <motion.div 
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3, delay: 0.1 }}
+            className="mt-6 min-h-[600px]"
+          >
             <TabsContent value="groups" className="mt-0">
               <MyGroups onCreateClick={handleCreateClick} />
             </TabsContent>
@@ -124,7 +195,7 @@ export function DashboardTabs() {
             <TabsContent value="transactions" className="mt-0">
               <Transactions />
             </TabsContent>
-          </div>
+          </motion.div>
         </Tabs>
       </div>
     </div>
