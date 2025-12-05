@@ -159,21 +159,21 @@ export function DashboardTabs() {
               value="groups" 
               className="group gap-1.5 rounded-xl px-4 py-1.5 md:px-5 md:py-2 text-xs md:text-sm font-medium data-[state=active]:bg-primary/90 data-[state=active]:text-primary-foreground data-[state=active]:shadow-sm transition-all duration-200 hover:bg-gray-50/80 dark:hover:bg-gray-700/60 hover:shadow-sm active:scale-95"
             >
-              <Home className="h-4 w-4 transition-transform group-hover:scale-110 group-data-[state=active]:scale-110" />
+              <Home className="h-3.5 w-3.5 transition-transform group-hover:scale-110 group-data-[state=active]:scale-110" />
               <span className="relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 group-hover:after:w-full group-data-[state=active]:after:w-full">Pools</span>
             </TabsTrigger>
             <TabsTrigger 
               value="create" 
               className="group gap-1.5 rounded-xl px-4 py-1.5 md:px-5 md:py-2 text-xs md:text-sm font-medium data-[state=active]:bg-primary/90 data-[state=active]:text-primary-foreground data-[state=active]:shadow-sm transition-all duration-200 hover:bg-gray-50/80 dark:hover:bg-gray-700/60 hover:shadow-sm active:scale-95"
             >
-              <PlusCircle className="h-4 w-4 transition-transform group-hover:scale-110 group-data-[state=active]:scale-110" />
+              <PlusCircle className="h-3.5 w-3.5 transition-transform group-hover:scale-110 group-data-[state=active]:scale-110" />
               <span className="relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 group-hover:after:w-full group-data-[state=active]:after:w-full">Create</span>
             </TabsTrigger>
             <TabsTrigger 
               value="transactions" 
               className="group gap-1.5 rounded-xl px-4 py-1.5 md:px-5 md:py-2 text-xs md:text-sm font-medium data-[state=active]:bg-primary/90 data-[state=active]:text-primary-foreground data-[state=active]:shadow-sm transition-all duration-200 hover:bg-gray-50/80 dark:hover:bg-gray-700/60 hover:shadow-sm active:scale-95"
             >
-              <Receipt className="h-4 w-4 transition-transform group-hover:scale-110 group-data-[state=active]:scale-110" />
+              <Receipt className="h-3.5 w-3.5 transition-transform group-hover:scale-110 group-data-[state=active]:scale-110" />
               <span className="relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 group-hover:after:w-full group-data-[state=active]:after:w-full">Activity</span>
             </TabsTrigger>
           </TabsList>
