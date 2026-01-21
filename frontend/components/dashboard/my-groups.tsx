@@ -183,7 +183,7 @@ export function MyGroups({ onCreateClick }: MyGroupsProps) {
                     <div className="space-y-1">
                       <div className="flex items-center gap-2 text-xs text-muted-foreground">
                         <Users className="h-3.5 w-3.5" />
-                        Members
+                      Members
                       </div>
                       <div className="text-lg font-semibold">{pool.members_count}</div>
                     </div>

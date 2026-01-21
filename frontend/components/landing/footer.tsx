@@ -37,10 +37,6 @@ export function Footer() {
                 <span className="w-2 h-2 rounded-full bg-yellow-500"></span>
                 <span>Celo</span>
               </div>
-              <div className="flex items-center gap-2 text-muted-foreground">
-                <span className="w-2 h-2 rounded-full bg-purple-500"></span>
-                <span>Somnia</span>
-              </div>
             </div>
           </div>
 
@@ -76,7 +72,7 @@ export function Footer() {
         {/* Bottom Section */}
         <div className="border-t border-border/40 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-muted-foreground text-center md:text-left">
-            © 2025 Hajo. Multi-chain community savings platform.
+            © 2025 Hajo. Community savings platform.
           </p>
           <div className="flex items-center gap-4">
             <a
